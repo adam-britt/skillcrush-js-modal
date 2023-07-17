@@ -1,15 +1,19 @@
 var modal = document.querySelector(".modal");
 var modalX = document.querySelector(".modal-x");
+var button = document.querySelector("button");
 
-modal.addEventListener("click", function() {
+button.addEventListener("click", function() {
     if(modal.classList.contains("show-modal")) {
-        modalX.classList.add("show-modal");
-        modal.innerText = "You've got this!";
+        modal.classList.remove("show-modal");
+        button.innerText = "Who's got this?";
     } else {
-        modalX.classList.remove("show-modal");
-        modal.innterText = "Who's got this?";
+        modal.classList.add("show-modal");
+        button.innerText = "You've got this!";
     }
+
 });
 
-
-test
+modalX.addEventListener("click", function() {
+    modal.classList.remove("show-modal");
+    button.innerText = "Who's got this?";
+})
